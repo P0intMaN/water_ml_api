@@ -1,0 +1,176 @@
+/* GENERALS BEGIN */
+html{
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding:0;
+    margin:0;
+}
+body{
+    background-color: #e5e5e5; /*#CCCCCC*/
+    padding:0;
+    margin:0;
+    font-size: 1.125rem;
+    color: black;
+}
+a{
+    color:black;
+    text-decoration: none;
+    background-color: transparent;
+}
+blockquote{
+    font-style:italic;
+    padding-left: 40px;
+    margin: 0 0 1rem;
+    border-left: 2px solid #4717f6;
+}
+th, td{
+    padding: 8px;
+}
+mark{
+    background-color:rgba(225, 224, 0, 0.7);
+}
+a:hover{
+    color:#4717f6;
+}
+.heading{
+    font-size: 80px;
+}
+@media (min-width: 576px){
+    
+    .container, .container-sm{
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    
+    .container, .container-md, .container-sm{
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px){
+    
+    .container, .container-lg, .container-md, .container-sm{
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px){
+
+    .container, .container-lg, .container-md, .container-sm, .container-xl{
+        max-width: 1080px;
+    }
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+/* GENERALS END */
+
+/* COLOR SCHEMES */
+.black{
+    color: black!important;
+}
+.blue-bg{
+    background-color: #b2b2ff;
+}
+.secondary-bg{
+    background-color: #fafafa;
+}
+.purple-bg-secondary{
+    background-color: #d8b2d8;
+}
+.purple-bg{
+    background-color: #a239ca;
+}
+.btn-primary {
+    border-style: solid;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    box-shadow: rgb(0 0 0 / 30%) 0 0 10px;
+    background-color: #a239ca;
+    border-color: transparent;
+    color: #fff;
+}
+.btn:hover{
+    background-color: #920ec7;
+    border-color:transparent;
+}
+.bg-light{
+    background-color: white!important;
+}
+.blue-bg-secondary{
+    background-color: #ccccff;
+}
+.button-no-style{
+    border: 0;
+}
+/* COLOR SCHEME ENDS */
+/* TEXT-DECORATION BEGINS */
+.display-3{
+    font-size:72px;
+}
+.link-unstyled{
+    color:inherit;
+}
+.marker-highlight{
+    border-radius: 1em 0 1em 0;
+    background-image: linear-gradient(-100deg, rgba(225, 224, 0, 0.3), rgba(225, 224, 0, 0.7) 95%, rgba(225, 224, 0, 0.1)) 
+}
+.border-top-purple{
+    border-top: 1px solid #a239ca!important;
+}
+/* TEXT-DECORATION ENDS */
+
+/* NAVBAR BEGINS */
+.navbar-light{
+    background-color: white;
+}
+.navbar li{
+    transition: 0.3s;
+    margin: 0 8px 0 0;
+    font-weight: 600;
+}
+.navbar li:hover{
+    background-color: #b2b2ff;
+    border-radius: 0.375rem;
+}
+/* NAVBAR ENDS */
+
+/* CONTENT SECTION BEGINS */
+.container > .main-content{
+    margin-top: 5rem;
+}
+.main-content{
+    margin-top:2rem;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+.border-0 {
+    border: 0!important;
+}
+.border-black{
+    border: 1px solid black;
+}
+.border-purple{
+    border: 2.5px dashed purple;
+}
+/* FORM SECTION BEGINS */
+.form-group{
+    margin-bottom: 1rem;
+}
+.form-link{
+    color:rgb(0, 132, 255);
+    text-decoration: underline;
+}
+/* FORM SECTION ENDS */

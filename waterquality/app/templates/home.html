@@ -1,1 +1,131 @@
-hello waterr!
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Main CSS -->
+    <link href="../static/css/main.css" rel="stylesheet">
+    
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="heading text-center fw-light">Water Quality <span class="fw-bold">Prediction.</span></div>
+        <div class="row justify-content-center pt-5">
+            <div class="col-md-10 col-lg-8">
+                <div class="mx-auto mt-3" style="max-width:400px;">
+        
+                    <div class="mb-4 p-3 border-purple rounded">
+                        <div class="form-group">
+                            <label class="form-label" for="ph">pH</label>
+        
+                            
+                                    <input class="form-control" id="ph" name="ph" required="" type="text" value="">
+                            
+                            
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="temp">Temperature</label>
+        
+                            
+                                    <input class="form-control" id="temp" name="temp" required="" type="text" value="">
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="turbidity">Turbidity</label>
+        
+                            
+                                    <input class="form-control" id="turbidity" name="turbidity" required="" type="text" value="">
+                            
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="hardness">Hardness</label>
+        
+                            
+                                    <input class="form-control" id="hardness" name="hardness" required="" type="text" value="">
+                            
+                        </div>
+        
+                        <p class="text-muted text-end mt-n2">
+                            <a class="form-link" href="#">Browse Code Here</a>
+                        </p>
+        
+                        <div class="text-center" id="predict" onclick="prediction()">
+                            <button class="btn btn-primary btn-lg w-100 px-5 mt-2" > Predict Now!</button>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex text-muted small w-100 mx-auto mb-4">
+                        <span class="flex-fill border-top-purple" style="margin-top: 1.1rem;"></span>
+                        <p class="my-1 px-2">The Prediction Will Appear Here</p>
+                        <span class="flex-fill border-top-purple" style="margin-top: 1.1rem;"></span>
+                    </div>
+        
+                    <div class="text-center alert alert-dark px-5 mt-2 py-2" id="predictor">
+                        <a class="alert-link" href="#">Water quality NOT TESTED</a>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Predict JS -->
+    <script>
+        function prediction(){
+            ph = document.getElementById('ph').value;
+            temp = document.getElementById('temp').value;
+            turbidity = document.getElementById('turbidity').value;
+            hardness = document.getElementById('hardness').value;
+            
+            $.ajax(
+                {
+                    type: "GET",
+                    url: "http://8861-117-220-57-234.ngrok.io/predict?ph="+ph+"&temperature="+temp+"&turbidity="+turbidity+"&hardness="+hardness,
+                    success: function(updated_data){
+                        update = document.getElementById('predictor')
+                        if (updated_data == '[1]'){
+                            
+                                update.classList.remove('alert-dark')
+                                update.classList.remove('alert-danger')
+                                update.classList.remove('alert-success')
+                                update.classList.add('alert-success')
+                            
+                            $("#predictor").html('<a class="alert-link" href="#">Water quality is GOOD</a>')
+                        }
+
+                        if (updated_data == '[0]'){
+                    
+                    update.classList.remove('alert-dark')
+                    update.classList.remove('alert-danger')
+                    update.classList.remove('alert-success')
+                    update.classList.add('alert-danger')
+                
+                $("#predictor").html('<a class="alert-link" href="#">Water quality is BAD</a>')
+            }
+
+                    }
+                }
+            )
+        }
+    </script>
+
+    <!-- SCRIPTS -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+   
+  </body>
+</html>
