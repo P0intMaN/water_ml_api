@@ -93,7 +93,7 @@
             $.ajax(
                 {
                     type: "GET",
-                    url: "http://8861-117-220-57-234.ngrok.io/predict?ph="+ph+"&temperature="+temp+"&turbidity="+turbidity+"&hardness="+hardness,
+                    url: "/predict?ph="+ph+"&temperature="+temp+"&turbidity="+turbidity+"&hardness="+hardness,
                     success: function(updated_data){
                         update = document.getElementById('predictor')
                         if (updated_data == '[1]'){
