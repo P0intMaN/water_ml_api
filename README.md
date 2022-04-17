@@ -30,6 +30,7 @@ the respective datapoints of different classes are **maximum**.
     <td valign="top"><img align=top src="https://i.imgur.com/vvymgNR.png" ></td>
   </tr>
 </table>
+    
 ## *Run Project 🚀*
 To deploy the project in your local machine, go to **`waterquality`** folder after downloading this project and follow the steps:
 
