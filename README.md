@@ -32,16 +32,16 @@ the respective datapoints of different classes are **maximum**.
 </table>
     
 ## *Run Project 🚀*
-To deploy the project in your local machine, go to **`waterquality`** folder after downloading this project and follow the steps:
+To deploy the project in your local machine, go to **`water_quality_ml_api`** folder after downloading this project and follow the steps:
 
 #### 1) Installing Dependencies
-Open a terminal within the current working directory (inside **`waterquality`**) and type:
+Open a terminal within the current working directory (inside **`water_quality_ml_api`**) and type:
 
 ```sh
 $ pip install requirements.txt
 ```
 #### 2) Run the Application
-Now, go ahead and type the following in the terminal:
+Now, go inside the **`waterquality`** folder and type the following in the terminal:
 
 ```sh
 $ python run.py
