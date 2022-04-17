@@ -26,7 +26,7 @@ the respective datapoints of different classes are **maximum**.
   
   <table>
   <tr>
-    <td valign="top"><img align=top src="https://i.imgur.com/zY64MhV.png" ></td>
+    <td valign="top"><img align=top src="https://i.imgur.com/zY64MhV.png" width=90% ></td>
     <td valign="top"><img align=top src="https://i.imgur.com/vvymgNR.png" ></td>
   </tr>
 </table>
