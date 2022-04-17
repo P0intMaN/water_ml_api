@@ -10,11 +10,6 @@
 # dataset = pd.read_csv('water_potability.csv')
 # dataset.head()
 
-# # correlation matrix
-# _, ax = 1,1
-
-# dataset = dataset.rename(columns={"Trihalomethanes":"Temperature"})
-
 # dataset.isna().sum()
 
 # # dropping NAN and NULLS
