@@ -1,1 +1,1 @@
-web: gunicorn waterquality.run:flask_app
+web: gunicorn waterquality.app:flask_app
