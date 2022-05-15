@@ -50,3 +50,6 @@ You should get a confirmation on the terminal that **Running on: 127.0.0.1:5000*
 
 #### 3) View the Project
 Go to your browser and enter: **`127.0.0.1:5000`** and you would find the project up and running!
+
+## *View the Project Live 🛰️*
+Go to [deployment site](https://water-quality-api.herokuapp.com/) and see the project in action!
