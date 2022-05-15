@@ -17,5 +17,6 @@ def prediction():
     hardness = float(request.args.get("hardness"))
     temperature = float(request.args.get("temperature"))
     turbidity = float(request.args.get("turbidity"))
+    vp = float(request.args.get("valvepressure"))
     preds = loaded_model.predict(sc.transform([[ph, hardness, temperature, turbidity]]))
     return str(preds)
