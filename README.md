@@ -53,3 +53,6 @@ Go to your browser and enter: **`127.0.0.1:5000`** and you would find the projec
 
 ## *View the Project Live 🛰️*
 Go to [deployment site](https://water-quality-api.herokuapp.com/) and see the project in action!
+
+## *Extended Support for Water Leakage Detection*
+Now, the API is able to detect **water leakage** as well. It is trained on data sourced from **EPANET** software which simulated a single-valve pipeline distribution. The pressure metric is **barometer**
