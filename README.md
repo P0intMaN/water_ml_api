@@ -4,7 +4,7 @@
 ## *Project Stack*
 - **Web Technologies:** _Flask, JS, AJAX_
 - **Machine Learning:** _Sklearn_
-- **Core Concept:** _Support Vector Machine_
+- **Core Concept:** _Support Vector Machine_, _Logistic Regression_
 
 ## *What is SVM?*
 SVM stands for **Support Vector Machine** and is one of the premier **_supervised machine learning technique_** typically used for classification and regresion tasks. It is exceptionally known to find outliers and deal with them. SVM is highly effective when the **_dimensionality is huge_**. SVM also comes equipped with various **kernels** (we will be using **`rbf`** kernel) which facilitates learning from different types of datasets.
