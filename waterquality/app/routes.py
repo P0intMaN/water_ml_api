@@ -7,8 +7,10 @@ from flask import request
 def home():
     return render_template('home.html')
 
-loaded_model = pickle.load(open(r"water_quality_svm.sav", 'rb'))
+water_quality = pickle.load(open(r"water_quality_svm.sav", 'rb'))
 sc = pickle.load(open(r"sc.pkl", 'rb'))
+le = pickle.load(open(r"le.pkl", 'rb'))
+water_pressure = pickle.load(open(r"water_pressure.sav", 'rb'))
 
 # creating route
 @flask_app.route("/predict")
@@ -18,5 +20,6 @@ def prediction():
     temperature = float(request.args.get("temperature"))
     turbidity = float(request.args.get("turbidity"))
     vp = float(request.args.get("valvepressure"))
-    preds = loaded_model.predict(sc.transform([[ph, hardness, temperature, turbidity]]))
-    return str(preds)
+    pred1 = str(water_quality.predict(sc.transform([[ph, hardness, temperature, turbidity]])))
+    pred2 = str(le.inverse_transform(water_pressure.predict([[vp]])))
+    return str(pred1 + " " + pred2)
