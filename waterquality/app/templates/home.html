@@ -112,7 +112,7 @@
                                 update.classList.remove('alert-success')
                                 update.classList.add('alert-danger')
                             
-                            $("#predictor").html('<a class="alert-link" href="#">Water quality is BAD <br>NO leakage detected.</a>')
+                            $("#predictor").html('<a class="alert-link" href="#">Water quality is BAD <br>SEVERE leakage detected.</a>')
                         }
                         if (updated_data == "[0] ['small']"){
                             
@@ -130,16 +130,16 @@
                             update.classList.remove('alert-success')
                             update.classList.add('alert-danger')
                         
-                        $("#predictor").html('<a class="alert-link" href="#">Water quality is BAD <br>SEVERE leakage detected.</a>')
+                        $("#predictor").html('<a class="alert-link" href="#">Water quality is BAD <br>NO leakage detected.</a>')
                         }
                         if (updated_data == "[1] ['no']"){
                             
                             update.classList.remove('alert-dark')
                             update.classList.remove('alert-danger')
                             update.classList.remove('alert-success')
-                            update.classList.add('alert-success')
+                            update.classList.add('alert-danger')
                         
-                        $("#predictor").html('<a class="alert-link" href="#">Water quality is GOOD <br>NO leakage detected.</a>')
+                        $("#predictor").html('<a class="alert-link" href="#">Water quality is GOOD <br>SEVERE leakage detected.</a>')
                         }
                         if (updated_data == "[1] ['small']"){
                             
@@ -155,9 +155,9 @@
                             update.classList.remove('alert-dark')
                             update.classList.remove('alert-danger')
                             update.classList.remove('alert-success')
-                            update.classList.add('alert-danger')
+                            update.classList.add('alert-success')
                         
-                        $("#predictor").html('<a class="alert-link" href="#">Water quality is GOOD <br>SEVERE leakage detected.</a>')
+                        $("#predictor").html('<a class="alert-link" href="#">Water quality is GOOD <br>NO leakage detected.</a>')
                         }
 
                     }
