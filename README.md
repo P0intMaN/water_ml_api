@@ -1,4 +1,4 @@
-# Water Quality Prediction with SVM
+# Water Quality and Leakage Detection with SVM and Logistic Regressor (1-layer NN)
 ###### An inteface cum API which classifies whether the water quality is GOOD or BAD
 
 ## *Project Stack*
