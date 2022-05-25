@@ -64,7 +64,35 @@
                                     <input class="form-control" id="valvepressure" name="valvepressure" required="" type="text" value="" placeholder="Ideal: 300">
                             
                         </div>
-
+                        <div class="d-flex">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="hardness">Day</label>
+        
+                            
+                                    <input class="form-control" id="day" name="day" required="" type="text" value="" placeholder="Range: 0-6">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="hardness">Time (hr)</label>
+        
+                            
+                                    <input class="form-control" id="time" name="time" required="" type="text" value="" placeholder="Ideal: 0-23">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="hardness">Flow Rate (L/s)</label>
+    
+                                    <input class="form-control" id="fr" name="fr" required="" type="text" value="" placeholder="Range: 0.0-5.0">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="hardness">Water Pressure (atm)</label>
+    
+                                    <input class="form-control" id="wp" name="wp" required="" type="text" value="" placeholder="Range: 90.0-400.0">
+                            
+                        </div>
                         <p class="text-muted text-end mt-n2">
                             <a class="form-link" href="#">Browse Code Here</a>
                         </p>
@@ -97,60 +125,48 @@
             temp = document.getElementById('temp').value;
             turbidity = document.getElementById('turbidity').value;
             hardness = document.getElementById('hardness').value;
-            vp = document.getElementById('valvepressure').value;
+            day = document.getElementById('day').value;
+            time = document.getElementById('time').value;
+            fr = document.getElementById('fr').value;
+            wp = document.getElementById('wp').value;
             
             $.ajax(
                 {
                     type: "GET",
-                    url: "/predict?ph="+ph+"&temperature="+temp+"&turbidity="+turbidity+"&hardness="+hardness+"&valvepressure="+vp,
+                    url: "/predict?ph="+ph+"&temperature="+temp+"&turbidity="+turbidity+"&hardness="+hardness+"&day="+day+"&time="+time+"&fr="+fr+"&wp="+wp,
                     success: function(updated_data){
                         update = document.getElementById('predictor')
-                        if (updated_data == "[0] ['no']"){
+                        if (updated_data == "[0] 1"){
                             
                                 update.classList.remove('alert-dark')
                                 update.classList.remove('alert-danger')
                                 update.classList.remove('alert-success')
                                 update.classList.add('alert-danger')
+
+
+
                             
-                            $("#predictor").html('<a class="alert-link" href="#">Water quality is BAD <br>SEVERE leakage detected.</a>')
+                            $("#predictor").html('<a class="alert-link" href="#">Water quality is BAD <br>leakage DETECTED.</a>')
                         }
-                        if (updated_data == "[0] ['small']"){
-                            
-                            update.classList.remove('alert-dark')
-                            update.classList.remove('alert-danger')
-                            update.classList.remove('alert-success')
-                            update.classList.add('alert-danger')
-                        
-                        $("#predictor").html('<a class="alert-link" href="#">Water quality is BAD <br>SMALL leakage detected.</a>')
-                        }
-                        if (updated_data == "[0] ['big']"){
+                        if (updated_data == "[0] 0"){
                             
                             update.classList.remove('alert-dark')
                             update.classList.remove('alert-danger')
                             update.classList.remove('alert-success')
                             update.classList.add('alert-danger')
                         
-                        $("#predictor").html('<a class="alert-link" href="#">Water quality is BAD <br>NO leakage detected.</a>')
-                        }
-                        if (updated_data == "[1] ['no']"){
+                        $("#predictor").html('<a class="alert-link" href="#">Water quality is BAD <br>leakage NOT DETECTED.</a>')
+                    }
+                        if (updated_data == "[1] 1"){
                             
                             update.classList.remove('alert-dark')
                             update.classList.remove('alert-danger')
                             update.classList.remove('alert-success')
                             update.classList.add('alert-danger')
                         
-                        $("#predictor").html('<a class="alert-link" href="#">Water quality is GOOD <br>SEVERE leakage detected.</a>')
+                        $("#predictor").html('<a class="alert-link" href="#">Water quality is GOOD <br>leakage DETECTED.</a>')
                         }
-                        if (updated_data == "[1] ['small']"){
-                            
-                            update.classList.remove('alert-dark')
-                            update.classList.remove('alert-danger')
-                            update.classList.remove('alert-success')
-                            update.classList.add('alert-danger')
-                        
-                        $("#predictor").html('<a class="alert-link" href="#">Water quality is GOOD <br>SMALL leakage detected.</a>')
-                        }
-                        if (updated_data == "[1] ['big']"){
+                        if (updated_data == "[1] 0"){
                             
                             update.classList.remove('alert-dark')
                             update.classList.remove('alert-danger')
